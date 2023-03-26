@@ -1,0 +1,19 @@
+.header {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    color: #fff;
+    height: 80px;
+    align-items: center;
+    justify-content: end;
+    padding: 0 50px;
+}
+.header nav{
+    margin: 0 10px;
+}
+.navbar-item{
+    overflow: hidden;
+}
+.navbar-item:hover .text-component{
+    transform: translateY(-200%);
+}
