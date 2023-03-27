@@ -2,48 +2,60 @@
 @tailwind components;
 @tailwind variants;
 @tailwind utilities;
-
-@font-face {
-    font-family: Thin;
-    src: url(./OTF/PPNeueMontreal-Thin.otf);
-}
-
-@font-face {
-    font-family: Medium;
-    src: url(./OTF/PPNeueMontreal-Medium.otf);
-}
-
-@font-face {
-    font-family: Bold;
-    src: url(./OTF/PPNeueMontreal-Bold.otf);
-}
-
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300;400;700&display=swap');
 /* ! Reset */
 body,
 html {
-    font-family: Medium;
+    font-family: 'M PLUS 1p', sans-serif;
     font-size: 16px;
     box-sizing: border-box;
 }
 
 .medium {
-    font-family: Medium;
+    font-weight: 400;
 }
 
 .thin {
-    font-family: Thin;
+    font-weight: 400;
 }
 
 .bold {
-    font-family: bold;
+    font-weight: 700;
 }
 
+.content {
+    max-width: 50%;
+    margin: 0 auto;
+}
+
+.header {
+    position: fixed;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    display: flex;
+    color: #fff;
+    height: 80px;
+    align-items: center;
+    justify-content: end;
+    padding: 0 50px;
+    z-index: 999999;
+}
+
+.header nav {
+    margin: 0 10px;
+}
+.tx{
+    color: #000;
+    mix-blend-mode: difference;
+}
 *,
 *:before,
 *:after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    user-select: none;
 }
 
 ol,
@@ -85,27 +97,27 @@ section {
     color: #fff;
 }
 
+
 #cursor {
-    position: fixed;
-    width: 15px;
-    height: 15px;
+    position: absolute;
+    width: 8px;
+    height: 8px;
     transform: translate(-50%, -50%);
     top: 0;
     left: 0;
     border-radius: 50%;
     pointer-events: none;
     background: #ffe600;
-    transition: all .2s cubic-bezier(.215, .61, .355, 1);
+    transition: all .5s cubic-bezier(.215, .61, .355, 1);
     z-index: 9999;
 }
-
+#cursor-text{color: #fff;}
 #cursor.active {
     transform: translate(-50%, -50%);
-    width: 40px;
-    height: 40px;
+    width: 70px;
+    height: 70px;
     background: rgb(255, 230, 0);
-    opacity: .8;
-    box-shadow: 0 0 10px 10px #ffe600;
+    filter: blur(15px);
 }
 
 .image {
@@ -248,9 +260,6 @@ section {
 }
 
 .grid-underlay {
-    -webkit-text-size-adjust: 100%;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
     color: #fff;
     letter-spacing: 0;
     box-sizing: border-box;
@@ -271,9 +280,6 @@ section {
 }
 
 .row {
-    -webkit-text-size-adjust: 100%;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
     color: #fff;
     letter-spacing: 0;
     pointer-events: none;
@@ -317,9 +323,4 @@ section {
     width: 100%;
     border-left: 1px dashed rgba(128, 128, 128, 0.2);
     border-right: 1px dashed rgba(128, 128, 128, 0.2);
-}
-::-webkit-scrollbar{
-    background: #fff;
-    color: #fff;
-    z-index: 10000;
 }

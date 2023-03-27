@@ -1,23 +1,8 @@
 import React, { useRef, useEffect, useState } from "react";
 import { useInView } from "framer-motion";
 
-function StringToArray(text) {
-    var list = []
-    for (let i = 0; i < text.length; i++) {
-        if (text[i] === " ") {
-            list.push(text[i]);
-        } else {
-            list.push(text[i].toString());
-        }
-    }
-    console.log(list)
-    return list;
-}
-
 function Text({ text, duration, theme }) {
-    const [textArray, setTextArray] = useState([""])
     useEffect(() => {
-        setTextArray(StringToArray(text))
     }, [text]);
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
@@ -25,10 +10,8 @@ function Text({ text, duration, theme }) {
     return (
         <div ref={ref} className='text-component'>
             <div style={{ display: 'flex', overflow: 'hidden', height: 'min-content', flexWrap: 'wrap' }}>
-                {textArray.map((item, index) => {
+                {text.split(' ').map((item, index) => {
                     return (
-                        item == " " ?
-                            <span key={index} style={{margin: 10}}></span> :
                             <span
                                 key={index}
                                 style={{
@@ -40,7 +23,7 @@ function Text({ text, duration, theme }) {
                                     color: theme ? '#fff' : '#000'
 
                                 }}
-                            >{item}
+                            >{item + ' '}
                             </span>
                     )
                 })}
