@@ -43,9 +43,8 @@ function App() {
                         </Routes>
                     </AnimatePresence>
                 </div>
+                <img src={logo} width={70} style={{ zIndex: 9999, position: 'fixed', top: 10, right: 20, color: '#fff', fill: 'difference' }} className='link' data-text="logo" />
             </div>
-            <Link to={'/'}><img src={logo} width={70} style={{ zIndex: 9999, position: 'fixed', top: 10, right: 20 }} className='link' data-text="logo" />
-            </Link>
             <NavBar theme={theme} changeTheme={changeTheme} />
         </BrowserRouter>
     );

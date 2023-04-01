@@ -1,0 +1,21 @@
+:root {
+    --offset: 20vw;
+    --move-initial: calc(-25% + var(--offset));
+    --move-final: calc(-50% + var(--offset));
+}
+
+.reverse__marquee__inner {
+    animation-name: reverseMarquee;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes reverseMarquee {
+    0% {
+        transform: translate3d(var(--move-initial), 0, 0);
+    }
+
+    100% {
+        transform: translate3d(var(--move-final), 0, 0);
+    }
+}

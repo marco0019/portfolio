@@ -6,6 +6,7 @@ import HomeLight from '../images/Home-light.svg'
 import Text from "../components/Text";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Table from "../components/Table";
 import Slider from "../components/Slider";
 
 const days = [
@@ -44,12 +45,22 @@ const Home = ({ theme, changeTheme }) => {
             variants={'animate'}>
             <div data-scroll-container className='bg-transition flex flex-col'>
                 <Image img={theme ? HomeLight : HomeDark} />
-                <Slider />
-                <h1 className="text-black dark:text-white text-7xl mt-32 max-w-4xl max-lg:text-3xl self-center text-center">We design disruptive brands for organizations that aspire to have a positive social and environmental impact.</h1>
+                <Slider duration={5}>
+                    SITE of the DAY -
+                </Slider>
+                <h1 className="text-black dark:text-white text-5xl mt-24 max-w-4xl max-lg:text-3xl self-center text-center">
+                    <Text text={'We design disruptive brands for organizations that aspire to have a positive social and environmental impact.'} duration={2000} theme={theme} />
+                </h1>
                 <div className="flex flex-wrap text-black dark:text-white thin mt-24 mb-24 items-center justify-around">
                     <h3>Manziana, Rome, Italy <br />Local time→{day.getHours()}:{day.getMinutes()}</h3>
                     <h3 className="ml-10 mr-16">{days[day.getDay()]}<br />{mounth[day.getMonth() - 1]} {day.getDate()}, {day.getFullYear()}</h3>
                 </div>
+                <Table>
+                    <h1 className="text-white col">title</h1>
+                    <p className="text-white col">sdfvdfvdfvvsf</p>
+                    <p className="text-white col">sdfsvfvsfv</p>
+                    <p className="text-white col">sdfvsfvsfdv</p>
+                </Table>
                 <section data-scroll data-scroll-speed="-10" data-scroll-direction="horizontal" id="about">
                     <h2 className="mt-20">About</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -71,3 +82,7 @@ const Home = ({ theme, changeTheme }) => {
     )
 }
 export default Home;
+/*<Slider duration={10}>
+                    Play Digital & Beyond
+                </Slider>
+                */

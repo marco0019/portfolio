@@ -48,7 +48,7 @@ html {
     flex-direction: column;
     padding: 6px;
     border-radius: 12px;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(128, 128, 128, 0.5);
     align-items: center;
     justify-content: end;
     z-index: 99;
@@ -206,7 +206,6 @@ html {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    user-select: none;
 }
 
 ol,
@@ -296,6 +295,7 @@ section {
     height: 300px;
     margin-top: 25px;
     margin-left: 10px;
+    user-select: none;
 }
 
 .image img {
@@ -305,10 +305,19 @@ section {
 }
 
 ::selection {
-    background: #ffe600;
+    background: var(--clr-menu-light-one);
+    color: #000;
+}
+.dark ::selection{
+    background: var(--clr-menu-dark-one);
     color: #fff;
 }
-
+::-webkit-scrollbar-thumb{
+    display: none;
+    background: #000;
+    backdrop-filter: invert(1);
+    -webkit-backdrop-filter: invert(1);
+}
 .bg-transition {
     transition: all 1s cubic-bezier(.215, .61, .355, 1);
 }
@@ -316,7 +325,12 @@ section {
 .cbd {
     border: 1px solid red;
 }
-
+.line{
+    width: calc(100% - 20px);
+    transform: translateX(10px);
+    height: 1px;
+    margin: 20px 0;
+}
 /* ! Grid System */
 .grid {
     margin: 0 auto;
