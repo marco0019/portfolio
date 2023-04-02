@@ -27,7 +27,7 @@ html {
 }
 
 .thin {
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .bold {
@@ -250,8 +250,8 @@ section {
 
 #cursor {
     position: fixed;
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
     top: 0;
     left: 0;
     z-index: 99999;
@@ -262,6 +262,7 @@ section {
     transition: all .5s cubic-bezier(.215, .61, .355, 1);
     transform: translate(-50%, -50%);
 }
+
 
 #cursor-text {
     position: fixed;
@@ -288,6 +289,14 @@ section {
     transform: translateY(100%);
 }
 
+#point {
+    fill: white;
+}
+
+#m {
+    fill: white;
+}
+
 .image {
     overflow: hidden;
     display: flex;
@@ -308,16 +317,19 @@ section {
     background: var(--clr-menu-light-one);
     color: #000;
 }
-.dark ::selection{
+
+.dark ::selection {
     background: var(--clr-menu-dark-one);
     color: #fff;
 }
-::-webkit-scrollbar-thumb{
+
+::-webkit-scrollbar-thumb {
     display: none;
     background: #000;
     backdrop-filter: invert(1);
     -webkit-backdrop-filter: invert(1);
 }
+
 .bg-transition {
     transition: all 1s cubic-bezier(.215, .61, .355, 1);
 }
@@ -325,12 +337,7 @@ section {
 .cbd {
     border: 1px solid red;
 }
-.line{
-    width: calc(100% - 20px);
-    transform: translateX(10px);
-    height: 1px;
-    margin: 20px 0;
-}
+
 /* ! Grid System */
 .grid {
     margin: 0 auto;
@@ -439,7 +446,7 @@ section {
 }
 
 ::-webkit-scrollbar-button {
-    background: #fff;
+    background: #000;
 }
 
 .grid-underlay {
@@ -504,6 +511,11 @@ section {
     vertical-align: baseline;
     height: 100%;
     width: 100%;
-    border-left: 1px dashed rgba(128, 128, 128, 0.2);
-    border-right: 1px dashed rgba(128, 128, 128, 0.2);
+    border-left: 1px dashed rgba(128, 128, 128, 0.15);
+    border-right: 1px dashed rgba(128, 128, 128, 0.15);
+}
+::-webkit-scrollbar-thumb{
+    background: #fff;
+    color: #fff;
+    mix-blend-mode: difference !important;
 }

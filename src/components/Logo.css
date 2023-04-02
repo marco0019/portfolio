@@ -1,0 +1,4 @@
+.inverted-color{
+    fill: white;
+    mix-blend-mode: difference;
+}

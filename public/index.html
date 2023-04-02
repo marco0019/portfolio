@@ -28,7 +28,8 @@
 <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div style="display: flex;">
-        <div id="cursor"></div>
+        <div id="cursor">
+        </div>
         <div id="cursor-text">
             <p></p>
         </div>
@@ -54,10 +55,10 @@
             cursor.style.top = e.clientY + 'px'
             text.style.left = e.clientX + 'px'
             text.style.top = e.clientY + 'px';
-            links.forEach(link=>{
+            links.forEach(link => {
                 let info = link.getBoundingClientRect();
-                if((e.clientX < info.x | e.clientX > info.x + info.width) &
-                (e.clientY < info.y & e.clientY > info.y + info.height))document.querySelector('#cursor-text p').innerText = ''
+                if ((e.clientX < info.x | e.clientX > info.x + info.width) &
+                    (e.clientY < info.y & e.clientY > info.y + info.height)) document.querySelector('#cursor-text p').innerText = ''
             })
         })
     </script>

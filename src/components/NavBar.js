@@ -60,7 +60,7 @@ export default function NavBar({ theme, changeTheme }) {
                 </nav>
             </header>
             <div className="menu">
-                <img src={logo} alt="logo menu" width={50} style={{ marginRight: 6, marginLeft: 6 }} />
+                <img src={logo} alt="logo menu" width={50} style={{ marginRight: 6, marginLeft: 6, filter: 'invert(1)' }} />
                 <div className="header_btn" style={{ background: theme ? '#222' : '#ddd', color: theme ? '#fff' : '#000' }}>
                     <p className="flex">home<p style={{ color: `var(--clr-menu-${theme ? 'light' : 'dark'}-two)` }}>{window.location.pathname.replace('/', '.')}</p></p>
                     <button onClick={() => setOpen(!open)}>

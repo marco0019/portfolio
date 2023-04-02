@@ -10,6 +10,7 @@ import { Grid } from './components/GridBG';
 import NavBar from './components/NavBar';
 import { AnimatePresence } from 'framer-motion';
 import logo from './images/LOGO.svg'
+import Logo from './components/Logo';
 
 function App() {
     const [theme, setTheme] = useState(true)
@@ -43,8 +44,8 @@ function App() {
                         </Routes>
                     </AnimatePresence>
                 </div>
-                <img src={logo} width={70} style={{ zIndex: 9999, position: 'fixed', top: 10, right: 20, color: '#fff', fill: 'difference' }} className='link' data-text="logo" />
             </div>
+            <Logo/>
             <NavBar theme={theme} changeTheme={changeTheme} />
         </BrowserRouter>
     );

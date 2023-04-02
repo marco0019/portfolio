@@ -1,16 +1,16 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect } from "react";
 import { useInView } from "framer-motion";
 
-function Text({ text, duration, theme }) {
+function Text({ children, duration }) {
     useEffect(() => {
-    }, [text]);
+    }, [children]);
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
 
     return (
         <div ref={ref} className='text-component'>
             <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-                {text.split(' ').map((item, index) => {
+                {children.toString().split(' ').map((item, index) => {
                     return (
                         <span
                             key={index}
@@ -18,9 +18,8 @@ function Text({ text, duration, theme }) {
                                 transform: isInView ? "none" : "translateY(100px)",
                                 opacity: isInView ? 1 : 0,
                                 transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-                                transitionDelay: `${(index) * (duration / text.length)}ms`,
+                                transitionDelay: `${(index) * (duration / children.toString().length)}ms`,
                                 overflow: 'hidden',
-                                color: theme ? '#fff' : '#000',
                                 paddingTop: 5,
                                 paddingBottom: 5
                             }}

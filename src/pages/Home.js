@@ -8,7 +8,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Table from "../components/Table";
 import Slider from "../components/Slider";
-
+import logo from '../images/LOGO.svg'
 const days = [
     "Monday",
     "Tuesday",
@@ -36,7 +36,7 @@ const Home = ({ theme, changeTheme }) => {
     const [day, setDay] = useState(new Date())
     useState(() => {
         setDay(new Date())
-    }, [new Date().getMinutes()])
+    }, [Date.now()])
     return (
         <motion.div
             initial="initial"
@@ -45,21 +45,31 @@ const Home = ({ theme, changeTheme }) => {
             variants={'animate'}>
             <div data-scroll-container className='bg-transition flex flex-col'>
                 <Image img={theme ? HomeLight : HomeDark} />
-                <Slider duration={5}>
-                    SITE of the DAY -
-                </Slider>
-                <h1 className="text-black dark:text-white text-5xl mt-24 max-w-4xl max-lg:text-3xl self-center text-center">
-                    <Text text={'We design disruptive brands for organizations that aspire to have a positive social and environmental impact.'} duration={2000} theme={theme} />
-                </h1>
-                <div className="flex flex-wrap text-black dark:text-white thin mt-24 mb-24 items-center justify-around">
-                    <h3>Manziana, Rome, Italy <br />Local time→{day.getHours()}:{day.getMinutes()}</h3>
-                    <h3 className="ml-10 mr-16">{days[day.getDay()]}<br />{mounth[day.getMonth() - 1]} {day.getDate()}, {day.getFullYear()}</h3>
+                <div className="flex text-black dark:text-white thin mt-4 items-center justify-around">
+                    <p className="text-lg">Manziana, Rome, Italy <br />Local time→{day.getHours()}:{day.getMinutes()}</p>
+                    <p className="text-lg">{days[day.getDay()]}<br />{mounth[day.getMonth() - 1]} {day.getDate()}, {day.getFullYear()}</p>
                 </div>
-                <Table>
-                    <h1 className="text-white col">title</h1>
-                    <p className="text-white col">sdfvdfvdfvvsf</p>
-                    <p className="text-white col">sdfsvfvsfv</p>
-                    <p className="text-white col">sdfvsfvsfdv</p>
+                <h1 className="text-black dark:text-white text-7xl mt-16 mb-72 max-w-5xl max-lg:text-3xl self-center text-center">
+                    <Text duration={2000}>We design disruptive brands for organizations that aspire to have a positive social and environmental impact.</Text>
+                </h1>
+                <Table theme={theme}>
+                    <p className="text-[#888] text-2xl thin col-33 mb-10">
+                        <Text duration={1000}>Working worlwide for →</Text>
+                    </p>
+                    <p className="text-black dark:text-white thin text-2xl col-20 mb-10">
+                        <Text duration={1000}>Arts & Culture</Text>
+                        <Text duration={1000}>Industrial &</Text>
+                        <Text duration={1000}>Agricolture</Text>
+                    </p>
+                    <p className="text-black dark:text-white thin text-2xl col-20 mb-10">
+                        <Text duration={1000}>Civic & Public</Text>
+                        <Text duration={1000}>Not-For-Profit</Text>
+                    </p>
+                    <p className="text-black dark:text-white thin text-2xl col-20">
+                        <Text duration={1000}>Design & Archtecture</Text>
+                        <Text duration={1000}>Professional Services</Text>
+                        <Text duration={1000}>Fashion & Beaty</Text>
+                    </p>
                 </Table>
                 <section data-scroll data-scroll-speed="-10" data-scroll-direction="horizontal" id="about">
                     <h2 className="mt-20">About</h2>
@@ -82,7 +92,3 @@ const Home = ({ theme, changeTheme }) => {
     )
 }
 export default Home;
-/*<Slider duration={10}>
-                    Play Digital & Beyond
-                </Slider>
-                */

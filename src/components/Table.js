@@ -1,13 +1,16 @@
 import '../App.css';
+import Line from './Line';
 
-export default function Table({ children, borderStyle }) {
+export default function Table({ children, theme }) {
     return (
         <div>
-            <div className="line bg-[#888]"></div>
-            <div className='grid'>
-                {children}
+            <Line theme={theme} type={'solid'} />
+            <div className='m mb-72'>
+                <div className='grid flex-wrap'>
+                    {children}
+                </div>
             </div>
-            <div className="line bg-[#888]"></div>
+            <Line theme={theme} type={'solid'} delay={250} />
         </div>
     )
 }
