@@ -14,12 +14,12 @@ function Text({ children, duration }) {
                     return (
                         <span
                             key={index}
+                            className="maxo max-xl:text-3xl max-lg:text-2xl max-md:text-xl"
                             style={{
                                 transform: isInView ? "none" : "translateY(100px)",
                                 opacity: isInView ? 1 : 0,
                                 transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
                                 transitionDelay: `${(index) * (duration / children.toString().length)}ms`,
-                                overflow: 'hidden',
                                 paddingTop: 5,
                                 paddingBottom: 5
                             }}

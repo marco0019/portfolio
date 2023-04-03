@@ -5,6 +5,7 @@ import { FaTimes, FaMoon } from 'react-icons/fa'
 import { CgMenu } from 'react-icons/cg'
 import { FiSun } from 'react-icons/fi'
 import logo from '../images/LOGO.svg'
+import Logo from "./Logo";
 
 export default function NavBar({ theme, changeTheme }) {
     const [open, setOpen] = useState(false);
@@ -20,6 +21,7 @@ export default function NavBar({ theme, changeTheme }) {
                 link.classList.remove('active');
             })
             el.classList.add('active');
+            console.log(window.location.pathname);
         }
         const el = useRef(null);
         return <a className="header-link" ref={el} onClick={() => handleClick(el.current)}><Link to={`${path}`}>{text}</Link></a>
@@ -60,7 +62,9 @@ export default function NavBar({ theme, changeTheme }) {
                 </nav>
             </header>
             <div className="menu">
-                <img src={logo} alt="logo menu" width={50} style={{ marginRight: 6, marginLeft: 6, filter: 'invert(1)' }} />
+                <div>
+                    <Logo width={60} />
+                </div>
                 <div className="header_btn" style={{ background: theme ? '#222' : '#ddd', color: theme ? '#fff' : '#000' }}>
                     <p className="flex">home<p style={{ color: `var(--clr-menu-${theme ? 'light' : 'dark'}-two)` }}>{window.location.pathname.replace('/', '.')}</p></p>
                     <button onClick={() => setOpen(!open)}>

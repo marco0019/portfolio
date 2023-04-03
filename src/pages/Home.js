@@ -9,6 +9,8 @@ import { motion } from "framer-motion";
 import Table from "../components/Table";
 import Slider from "../components/Slider";
 import logo from '../images/LOGO.svg'
+import Parallax from "../components/Parallax";
+
 const days = [
     "Monday",
     "Tuesday",
@@ -50,7 +52,7 @@ const Home = ({ theme, changeTheme }) => {
                     <p className="text-lg">{days[day.getDay()]}<br />{mounth[day.getMonth() - 1]} {day.getDate()}, {day.getFullYear()}</p>
                 </div>
                 <h1 className="text-black dark:text-white text-7xl mt-16 mb-72 max-w-5xl max-lg:text-3xl self-center text-center">
-                    <Text duration={2000}>We design disruptive brands for organizations that aspire to have a positive social and environmental impact.</Text>
+                    <Text duration={4000}>We design disruptive brands for organizations that aspire to have a positive social and environmental impact.</Text>
                 </h1>
                 <Table theme={theme}>
                     <p className="text-[#888] text-2xl thin col-33 mb-10">
@@ -71,10 +73,41 @@ const Home = ({ theme, changeTheme }) => {
                         <Text duration={1000}>Fashion & Beaty</Text>
                     </p>
                 </Table>
-                <section data-scroll data-scroll-speed="-10" data-scroll-direction="horizontal" id="about">
-                    <h2 className="mt-20">About</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </section>
+                <div className="mt-20">
+                    <Slider duration={40} text={'Art & Culture'}>
+                        <h1 className="text-[30rem]" data-scroll data-scroll-speed="10" data-scroll-direction="horizontal">Arts & Culture</h1>
+                    </Slider>
+                </div>
+                <Parallax />
+                <div id="fixed-elements">
+                    <div>
+                        <div>
+                            <div data-scroll data-scroll-sticky
+                                data-scroll-target="#fixed-elements">
+                                <div data-scroll data-scroll-offset="200">
+                                    <h3>
+                                        04. <br />
+                                        Fixed elements
+                                    </h3>
+                                    <div>
+                                        <p>
+                                            Create slides that stick and untick to the viewport while scrolling through.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div data-scroll
+                                data-scroll-repeat>
+                                <div id="fixed-target"></div>
+                                <div data-scroll data-scroll-sticky data-scroll-target="#fixed-target"
+                                    style={{ backgroundImage: "url('https://locomotivemtl.github.io/locomotive-scroll/dist/images/locomotive04.jpg')" }}>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <section data-scroll data-scroll-speed="3" id="projects">
                     <h2>Projects</h2>
                     <ul>

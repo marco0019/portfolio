@@ -45,7 +45,9 @@ function App() {
                     </AnimatePresence>
                 </div>
             </div>
-            <Logo/>
+            <div className='fixed top-5 right-5'>
+            <Logo width={80}/>
+            </div>
             <NavBar theme={theme} changeTheme={changeTheme} />
         </BrowserRouter>
     );
